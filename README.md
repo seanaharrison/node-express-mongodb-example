@@ -9,9 +9,9 @@ An example Node.js application built using the Express framework connected to a 
 3.  Open Eclipse and create a workspace
 4.  Click Help -> Install New Software.. in the Work with field enter `http://www.nodeclipse.org/updates/`
 5.  Install nodeclipse
-6.  Navigate to the workspace folder (terminal or cmd) and run the Git command "git clone https://github.com/seana7a7/node-express-mongodb-example.git"
+6.  Navigate to the workspace folder (terminal or cmd) and run the Git command `git clone https://github.com/seana7a7/node-express-mongodb-example.git`
 7.  Click File -> Import -> General -> Existing Project into Workspace
-8.  Click "Browse" navigate to the workspace and select the "node-express-mongodb-example" folder
+8.  Click Browse navigate to the workspace and select the `node-express-mongodb-example` folder
 9.  Click finish
 
 ##Database Setup (Linux)
