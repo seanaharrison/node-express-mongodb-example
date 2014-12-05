@@ -1,1 +1,6 @@
 .settings/
+.c9/
+data/
+mongod
+node_modules/
+.jshintrc
