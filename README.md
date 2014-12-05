@@ -3,6 +3,9 @@ node-express-mongodb-example
 
 An example Node.js application built using the Express framework connected to a MongoDB database.
 
+####Update
+Upgraded application from Express 3 to Express 4
+
 ##Setup
 1.  Download and install Eclipse http://eclipse.org/downloads/
 2.  Download and install Git http://git-scm.com/downloads
@@ -13,6 +16,7 @@ An example Node.js application built using the Express framework connected to a 
 7.  Click File -> Import -> General -> Existing Project into Workspace
 8.  Click Browse navigate to the workspace and select the `node-express-mongodb-example` folder
 9.  Click finish
+10. Run the following on the command line `npm update`(Windows) or `sudo npm update`(Linux)
 
 ##Database Setup (Linux)
 1.  Download and install MongoDB http://www.mongodb.org/downloads

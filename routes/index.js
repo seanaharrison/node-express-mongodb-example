@@ -8,13 +8,14 @@ exports.homeDog = function(req, res) {
 	collection.find().toArray(function(err, dogsArray) {
 		if (dogsArray) {
 			res.render('index', {
-				title : 'Dogs',
-				path : req.path,
-				dogs : dogsArray
+				title: 'Dogs',
+				path: req.path,
+				dogs: dogsArray
 			});
-		} else {
+		}
+		else {
 			res.render('index', {
-				title : 'No Dogs Found'
+				title: 'No Dogs Found'
 			});
 		}
 	});
@@ -26,13 +27,14 @@ exports.createDog = function(req, res) {
 	var collection = db.collection('dogs');
 	var post = req.body;
 	collection.insert(post, {
-		safe : true
+		safe: true
 	}, function(error, result) {
 		if (error) {
 			res.render('error', {
-				message : 'Dog Save Failed!'
+				message: 'Dog Save Failed!'
 			});
-		} else {
+		}
+		else {
 			res.redirect("/");
 		}
 	});
@@ -47,21 +49,23 @@ exports.deleteDog = function(req, res) {
 	if (_id.match(checkForHexRegExp)) {
 		var objectId = new ObjectId(_id);
 		collection.remove({
-			'_id' : objectId
+			'_id': objectId
 		}, {
-			safe : true
+			safe: true
 		}, function(error, result) {
 			if (error) {
 				res.render('error', {
-					message : 'Dog Delete failed!'
+					message: 'Dog Delete failed!'
 				});
-			} else {
+			}
+			else {
 				res.redirect("/");
 			}
 		});
-	} else {
+	}
+	else {
 		res.render('error', {
-			message : 'Invalid _id'
+			message: 'Invalid _id'
 		});
 	}
 };
