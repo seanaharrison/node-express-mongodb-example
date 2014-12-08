@@ -3,6 +3,8 @@ node-express-mongodb-example
 
 An example Node.js application built using the Express framework connected to a MongoDB database.
 
+![ScreenShot](https://raw.githubusercontent.com/seana7a7/node-express-mongodb-example/master/public/img/screen.png)
+
 ####Update
 Upgraded application from Express 3 to Express 4
 
