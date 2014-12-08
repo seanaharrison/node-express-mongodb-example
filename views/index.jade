@@ -13,6 +13,7 @@ block content
           th Name
           th Breed
           th Colour
+          th Actions
       tbody    
         each dog in dogs
           tr
@@ -25,14 +26,18 @@ block content
             td
               form(action='/delete',method='post')
                 input(type='hidden', value='#{dog._id}', name='_id' id='_id')
-                input(type='submit', value='Delete')     
+                input(type='submit', value='Delete', class='btn btn-danger')   
+            td
+              p 
+                a(href='/dog/#{dog.name}' type='button' class='btn btn-success') Update              
   
-    form(action='/create', method='post' class="form-horizontal")
-      div(class="form-group")
+    form(action='/create', method='post' class='form-horizontal')
+      h3 Add Dog
+      div(class='form-group')
         input(id='name', name='name', type='text', placeholder='Name')
-      div(class="form-group")  
+      div(class='form-group')  
         input(id='breed', name='breed', type='text', placeholder='Breed')  
-      div(class="form-group")  
+      div(class='form-group')  
         input(id='colour', name='colour', type='text', placeholder='Colour')          
-      div(class="form-group")
-        input(type='submit', value='Submit') 
+      div(class='form-group')
+        input(type='submit', class='btn btn-primary', value='Submit') 

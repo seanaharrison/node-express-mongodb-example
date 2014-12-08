@@ -59,7 +59,9 @@ if ('development' == app.get('env')) {
 
 // routes
 app.get('/', routes.homeDog);
+app.get('/dog/:name', routes.findByName);
 app.post('/create', routes.createDog);
+app.post('/update', routes.updateDog);
 app.post('/delete', routes.deleteDog);
 
 app.listen(app.get('port'), function() {

@@ -1,7 +1,7 @@
 //Used for querying by _id
 var ObjectId = require('mongodb').ObjectID;
 
-// index
+// index return all dogs
 exports.homeDog = function(req, res) {
 	var db = req.db;
 	var collection = db.collection('dogs');
@@ -16,6 +16,28 @@ exports.homeDog = function(req, res) {
 		else {
 			res.render('index', {
 				title: 'No Dogs Found'
+			});
+		}
+	});
+};
+
+// get one dog
+exports.findByName = function(req, res) {
+	var db = req.db;
+	var collection = db.collection('dogs');
+	var name = req.params.name;
+	collection.findOne({
+		'name': name
+	}, function(err, item) {
+		if (item) {
+			res.render('dog', {
+				title: item.name,
+				dog: item
+			});
+		}
+		else {
+			res.render('error', {
+				message: 'Not Found'
 			});
 		}
 	});
@@ -40,7 +62,49 @@ exports.createDog = function(req, res) {
 	});
 };
 
-// delete
+// update a dog
+exports.updateDog = function(req, res) {
+	var db = req.db;
+	var collection = db.collection('dogs');
+	var id = req.body._id;
+	var post = req.body;
+
+	var dname = req.body.name;
+	var dbreed = req.body.breed;
+	var dcolour = req.body.colour;
+
+	var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$");
+	if (id.match(checkForHexRegExp)) {
+		var objectId = new ObjectId(id);
+		collection.update({
+			'_id': objectId
+		}, {
+			$set: {
+				name: dname,
+				breed: dbreed,
+				colour: dcolour
+			}
+		}, {
+			safe: true
+		}, function(err, item) {
+			if (err) {
+				res.render('error', {
+					message: 'Dog Update Failed! ' + err
+				});
+			}
+			else {
+				res.redirect("/");
+			}
+		});
+	}
+	else {
+		res.render('error', {
+			message: 'Invalid Value'
+		});
+	}
+};
+
+// delete a dog
 exports.deleteDog = function(req, res) {
 	var db = req.db;
 	var collection = db.collection('dogs');

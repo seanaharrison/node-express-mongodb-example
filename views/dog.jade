@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  
+  div(class='container')
+  
+    h1= title
+
+    form(action='/update', method='post' class="form-horizontal")
+      input(type='hidden', value='#{dog._id}', name='_id' id='_id')
+      div(class="form-group")
+        input(id='name', name='name', type='text', placeholder='Name', value='#{dog.name}')
+      div(class="form-group")  
+        input(id='breed', name='breed', type='text', placeholder='Breed', value='#{dog.breed}')  
+      div(class="form-group")  
+        input(id='colour', name='colour', type='text', placeholder='Colour', value='#{dog.colour}')          
+      div(class="form-group")
+        input(type='submit', value='Update', class="btn btn-success") 
