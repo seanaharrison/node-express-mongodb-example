@@ -5,4 +5,3 @@ mongod
 node_modules/
 .jshintrc
 database-data
-deploy.sh
