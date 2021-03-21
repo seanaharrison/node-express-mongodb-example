@@ -2,3 +2,6 @@
 .git
 node_modules
 database-data
+build_tag_pushImages.sh
+deploy.sh
+clean.sh
