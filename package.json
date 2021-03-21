@@ -1,9 +1,11 @@
 {
   "name": "node-express-mongodb-example",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start-app": "node app.js",
+    "start-app-debug": "node --inspect app.js",
+    "check-node-version": "node -v"
   },
   "dependencies": {
     "body-parser": "^1.5.2",
