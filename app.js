@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://'+ process.env.MONGO_HOST +':27017/myMongoDB', fu
 	}
 	else {
 		db = database;
-		console.log("Connected to db!");
+		console.log("Connected to mongodb!");
 	}
 });
 

@@ -4,12 +4,22 @@ LABEL mantainer="Luis Cubas" \
       description="Ejercicio 3" \
       version="1.0"
 
+ENV MONGO_HOST=localhost
+
 WORKDIR /usr/app/web
 
-COPY . .
+COPY package.json .
 
 RUN npm install
 
-CMD npm start
+COPY . .
+
+RUN chmod 775 entrypoint.sh
+
+EXPOSE 3000
+
+ENTRYPOINT [ "/usr/app/web/entrypoint.sh"]
+
+CMD [ "start" ]
 
 
