@@ -1,3 +1,4 @@
 .gitignore
 .git
 node_modules
+database-data

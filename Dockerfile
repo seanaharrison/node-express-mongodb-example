@@ -18,8 +18,10 @@ RUN chmod 775 entrypoint.sh
 
 EXPOSE 3000
 
-ENTRYPOINT [ "/usr/app/web/entrypoint.sh"]
+CMD npm start
 
-CMD [ "start" ]
+#ENTRYPOINT [ "/usr/app/web/entrypoint.sh"]
+
+#CMD [ "start" ]
 
 
