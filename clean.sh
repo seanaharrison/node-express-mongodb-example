@@ -30,3 +30,15 @@ docker network ls | grep nodejsNetwork
 docker ps | grep mongodb_lc
 docker ps | grep nodeappcontainer_lc
 
+#Delete docker images
+docker rmi nodeappimage_lc:latest
+docker rmi mongo:3.6
+docker rmi harbor.tallerdevops.com/lcubas/nodeappimage_lc:latest
+docker rmi harbor.tallerdevops.com/lcubas/mongo:3.6
+docker rmi node:15.11.0-alpine3.10
+
+#Check docker images
+docker images | grep nodeappimage_lc
+docker images | grep mongo
+docker images | grep node
+
