@@ -14,5 +14,3 @@ ENTRYPOINT ["npm", "start"]
 
 EXPOSE 5000
 
-hello 
-whats up
