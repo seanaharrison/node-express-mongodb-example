@@ -1,4 +1,4 @@
-// Module dependencies.
+ Module dependencies.
 var express = require('express');
 var routes = require('./routes');
 var path = require('path');
@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(logger('dev'));
